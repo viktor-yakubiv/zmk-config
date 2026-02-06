@@ -1,6 +1,16 @@
 name: Build ZMK firmware
-on: [push, pull_request, workflow_dispatch]
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
