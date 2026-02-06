@@ -21,6 +21,7 @@
                 // Special and modifier keys (without letters and other symbols)
                 // i. e. keys, that mostly do not change on layer switch
                 service_layer {
+                        display-name = "Service";
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |      |     |     |     | BSPC |
 // | CTRL |     |     |     |     |     |   |     |      |     |     |     |  '   |
@@ -38,6 +39,7 @@
                 // that is applied over the service layer.
                 // All non-letter keys are transparent to service keys.
                 qwerty_layer {
+                        display-name = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |    |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |    |
 // |    |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |    |
@@ -52,6 +54,7 @@
                 };
 
                 lower_layer {
+                        display-name = "Lower";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -66,6 +69,7 @@
                 };
 
                 raise_layer {
+                        display-name = "Upper";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
