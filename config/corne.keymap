@@ -15,72 +15,72 @@
 #define HIGHER  3
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                // Special and modifier keys (without letters and other symbols)
-                // i. e. keys, that mostly do not change on layer switch
-                service_layer {
-                        display-name = "Service";
+        // Special and modifier keys (without letters and other symbols)
+        // i. e. keys, that mostly do not change on layer switch
+        service_layer {
+            display-name = "Service";
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |      |     |     |     | BSPC |
 // | CTRL |     |     |     |     |     |   |     |      |     |     |     |  '   |
 // | SHFT |     |     |     |     |     |   |     |      |     |     |     | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
+            bindings = <
    &kp TAB   &none &none &none &none &none   &none &none &none &none &none &kp BSPC
    &kp LCTRL &none &none &none &none &none   &none &none &none &none &none &kp SQT
    &kp LSHFT &none &none &none &none &none   &none &none &none &none &none &kp ESC
                   &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo HIGHER &kp RALT
-                        >;
-                };
+            >;
+        };
 
-                // A default QWERTY letter layout
-                // that is applied over the service layer.
-                // All non-letter keys are transparent to service keys.
-                qwerty_layer {
-                        display-name = "QWERTY";
+        // A default QWERTY letter layout
+        // that is applied over the service layer.
+        // All non-letter keys are transparent to service keys.
+        qwerty_layer {
+            display-name = "QWERTY";
 // -----------------------------------------------------------------------------------------
 // |    |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |    |
 // |    |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |    |
 // |    |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |    |
 //                  |     |     |     |   |     |      |     |
-                        bindings = <
+            bindings = <
    &trans &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &trans
    &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &trans
    &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &trans
                    &trans &trans &trans   &trans &trans &trans
-                        >;
-                };
+            >;
+        };
 
-                lower_layer {
-                        display-name = "Lower";
+        lower_layer {
+            display-name = "Lower";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
+            bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+            >;
+        };
 
-                raise_layer {
-                        display-name = "Upper";
+        raise_layer {
+            display-name = "Upper";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
+            bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                              &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+            >;
         };
+    };
 };
