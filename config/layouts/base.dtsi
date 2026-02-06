@@ -25,3 +25,43 @@
     k20  k21  k22  k23  k24  k25    k26  k27  k28  k29  k2A  k2B              \
     k30  k31  k32  k33  k34  k35    k36  k37  k38  k39  k3A  k3B              \
                    k40  k41  k42    k43  k44  k45
+
+
+/**
+ * QWERTY layer
+ *
+ * Applies over the base layer
+╭────────────────── Left-side ──────────────────╮  ╭───────────────── Right-side ──────────────────╮
+├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
+│       ┃   Q   ┃   W   ┃   E   ┃   R   ┃   T   ┃  ┃   Y   ┃   U   ┃   I   ┃   O   ┃   P   ┃       │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│       ┃   A   ┃   S   ┃   D   ┃   F   ┃   G   ┃  ┃   H   ┃   J   ┃   K   ┃   L   ┃   ;   ┃       │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│       ┃   Z   ┃   X   ┃   C   ┃   V   ┃   B   ┃  ┃   N   ┃   M   ┃   ,   ┃   .   ┃   /   ┃       │
+╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
+                        ┌───────┬───────┬───────┐  ┌───────┬───────┬───────┐
+                        │       │       │       │  │       │       │       │
+                        ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+ */
+
+#define LEFT_SIDE_LAYER_MAP(                                                  \
+    k10, k11, k12, k13, k14, k15,                                             \
+    k20, k21, k22, k23, k24, k25,                                             \
+    k30, k31, k32, k33, k34, k35,                                             \
+                   k40, k41, k42                                              \
+)                                                                             \
+    k10  k11  k12  k13  k14  k15    &trans &trans &trans &trans &trans &trans \
+    k20  k21  k22  k23  k24  k25    &trans &trans &trans &trans &trans &trans \
+    k30  k31  k32  k33  k34  k35    &trans &trans &trans &trans &trans &trans \
+                   k40  k41  k42    &trans &trans &trans
+
+#define RIGHT_SIDE_LAYER_MAP(                                                 \
+                                               k16, k17, k18, k19, k1A, k1B,  \
+                                               k26, k27, k28, k29, k2A, k2B,  \
+                                               k36, k37, k38, k39, k3A, k3B,  \
+                                               k43, k44, k45                  \
+)                                                                             \
+    &trans &trans &trans &trans &trans &trans  k16  k17  k18  k19  k1A  k1B   \
+    &trans &trans &trans &trans &trans &trans  k26  k27  k28  k29  k2A  k2B   \
+    &trans &trans &trans &trans &trans &trans  k36  k37  k38  k39  k3A  k3B   \
+                         &trans &trans &trans  k43  k44  k45
