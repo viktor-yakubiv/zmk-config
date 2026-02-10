@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2024 Thiago Alves
+ * Copyright (c) 2026 Viktor Yakubiv
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+    behaviors {
+        // This Autoshift behavior was extracted
+        // from the official ZMK documentation
+        // and tweaked to preference of people above.
+        // Nothing in here should be credited to license holders.
+        //
+        // Also, when using this behavior, you should not use it directly.
+        // Use the macro function defined bellow it for a better syntax.
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
+
+// Helper macro to create an Autoshift version of a key.
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
