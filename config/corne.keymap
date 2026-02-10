@@ -12,7 +12,7 @@
 #include "behaviors/autoshift.dtsi"
 
 #include "layouts/qwerty.dtsi"
-#include "layouts/enthinum.dtsi"
+#include "layouts/enthium.dtsi"
 
 
 // Mnemonic layers
