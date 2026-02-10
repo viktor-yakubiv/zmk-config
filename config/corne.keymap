@@ -12,7 +12,7 @@
 #include "behaviors/autoshift.dtsi"
 #include "behaviors/homerowmods.dtsi"
 
-#include "layouts/qwerty.dtsi"
+#include "layouts/enthium.dtsi"
 
 
 /**
@@ -40,9 +40,11 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "Base";
-            bindings = <QWERTY>;
+        // Enthium is an alternative layout layer
+        // optimised for more comfortable typing and Vim-usage
+        enthium_layer {
+            display-name = "Enthium";
+            bindings = <ENTHIUM>;
         };
 
         lower_layer {
