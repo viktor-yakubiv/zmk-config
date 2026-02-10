@@ -1,0 +1,33 @@
+/**
+ * The Enthium layout
+ *
+ * The layout was designed by Suraj N. Kurapati (@sunaku)
+ * originally in 2024 and reviewed multiple times by 30 January 2026,
+ * when the latest Enthium v14 was published.
+ *
+ * Find out more about the layout at
+ *   https://sunaku.github.io/enthium-keyboard-layout.html
+ *   https://layouts.wiki/layouts/2026/enthium/
+ *
+ * The layout below is my adaptation of the Enthium v14 to Corne 3×6
+ *
+╭────────────────── Left-side ──────────────────╮  ╭───────────────── Right-side ──────────────────╮
+├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
+│       ┃   Q   ┃   Y   ┃   O   ┃   U   ┃   =   ┃  ┃   X   ┃   L   ┃   D   ┃   P   ┃   Z   ┃       │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│   B   ┃   C   ┃ I ┊ ⌥ ┃ A ┊ ⌃ ┃ E ┊ ⇧ ┃   -   ┃  ┃   K   ┃ H ┊ ⇧ ┃ T ┊ ⌃ ┃ N ┊ ⌥ ┃   S   ┃   W   │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│       ┃   '   ┃   ,   ┃   .   ┃   ;   ┃   /   ┃  ┃   J   ┃   M   ┃   G   ┃   F   ┃   V   ┃       │
+╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
+                        ┌───────┬───────┬───────┐  ┌───────┬───────┬───────┐
+                        │   󰎥   │   ␣   │   ⎋   │  │   ⏎   │   R   │   󰎨   │
+                        ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+ */
+
+#pragma once
+
+#define ENTHIUM \
+    &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp P   &kp Z   &none \
+    &kp B  &kp C   LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) &kp S   &kp W \
+    &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp F   AS(V)   &none \
+                             &mo 1   &kp SPACE &kp ESC     &kp RET &kp R   &mo 2
