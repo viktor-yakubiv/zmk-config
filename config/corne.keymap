@@ -13,9 +13,18 @@
 #include "behaviors/homerowmods.dtsi"
 #include "behaviors/layer-switching.dtsi"
 
+#include "layouts/qwerty.dtsi"
 #include "layouts/enthium.dtsi"
 #include "layouts/numbers.dtsi"
 #include "layouts/symbols.dtsi"
+
+
+// Mnemonic layers
+#define L_BASE     0
+#define L_QWERTY   0
+#define L_ENTHIUM  1
+#define L_LOWER    2
+#define L_HIGHER   3
 
 
 /**
@@ -47,9 +56,16 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // A default layer with QWERTY letter layout
+        // as a compatibility baseline
+        qwerty_layer {
+            display-name = "QWERTY";
+            bindings = <QWERTY>;
+        };
+
         // Enthium is an alternative layout layer
         // optimised for more comfortable typing and Vim-usage
-        enthium_layer {
+        enthinum_layer {
             display-name = "Enthium";
             bindings = <ENTHIUM>;
         };
