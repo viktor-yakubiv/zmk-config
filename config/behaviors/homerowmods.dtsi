@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
+#pragma once
 
 // The next defines are helpers to describe a home row modifiers by a numerical
 // importance. Smaller numbers are _more important_ then the others.
