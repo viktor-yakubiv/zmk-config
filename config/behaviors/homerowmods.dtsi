@@ -24,15 +24,15 @@
 
 // Left side
 #define LHRM1 LSHFT
-#define LHRM2 LGUI
+#define LHRM2 LCTRL
 #define LHRM3 LALT
-#define LHRM4 LCTRL
+#define LHRM4 LGUI
 
 // Right side
 #define RHRM1 RSHFT
-#define RHRM2 RGUI
+#define RHRM2 RCTRL
 #define RHRM3 RALT
-#define RHRM4 RCTRL
+#define RHRM4 RGUI
 
 // Instead of using the homerow mod behaviors directly, we'll use the next
 // macro functions so we don't have to worry when to use the `hm` or `hs`
