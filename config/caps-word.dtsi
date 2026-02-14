@@ -1,0 +1,36 @@
+// Combo keys
+// -----------------------------------------------------------------------------
+// Unfortunately, there is just that much keys one can use on a small keyboard,
+// and not all the functionalities I want for my base layer fit on a 42-keys
+// keyboard. The solution for that is to use Combo keys, so I can make two keys
+// that make sense to be pressed together, to behave in a different way.
+//
+// Notice that Combo keys require the keys to be defined as numbers
+// representing their physical position in the keyboard.
+// The names of these macros should follow the following syntax:
+//
+// COMBO_KEY_<combo-name>
+#define COMBO_KEY_CAPS_WORD  <LM1 RM1>
+
+// Behavior configuration
+// -----------------------------------------------------------------------------
+// I like to have couple more keys to not break the CAPS_WORD streak, like the
+// backspace key. Since I make too many mistakes while typing, I find extremely
+// annoying to stop the CAPS_WORD whenever I want to fix an error.
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BSPC>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // Turn on CAPS_WORD when pressing both shift keys together.
+        combo_caps_word {
+            timeout-ms = <75>;
+            key-positions = COMBO_KEY_CAPS_WORD;
+            layers = <0>;
+            bindings = <&caps_word>;
+        };
+    };
+};
