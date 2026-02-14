@@ -20,4 +20,4 @@
     &trans  &kp GRAVE  &kp LT     &kp GT    &kp MINUS  &kp PIPE      &kp CARET  &kp LBRC   &kp RBRC   &kp DLLR  &none    &trans \
     &trans  &kp EXCL   &kp ASTRK  &kp FSLH  &kp EQUAL  &kp AMPS      &kp HASH   &kp LPAR   &kp RPAR   &kp SEMI  &kp DQT  &trans \
     &trans  &kp TILDE  &kp PLUS   &kp LBKT  &kp RBKT   &kp PRCNT     &kp AT     &kp COLON  &kp COMMA  &kp DOT   &kp SQT  &trans \
-                                  &trans    &trans     &to L_BASE    &to L_NUMBERS &trans  &trans
+                                  &trans    &trans     &to L_BASE    &trans     &trans  &trans

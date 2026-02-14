@@ -11,6 +11,7 @@
 #include "keypos/corne.dtsi"
 #include "behaviors/autoshift.dtsi"
 #include "behaviors/homerowmods.dtsi"
+#include "behaviors/layer-switching.dtsi"
 
 #include "layouts/enthium.dtsi"
 #include "layouts/numbers.dtsi"

@@ -1,0 +1,17 @@
+/ {
+    behaviors {
+        // Tap: Toggle layer
+        // Shift-tap: -
+        // Double-tap: -
+        // Hold: Momentary layer
+        // Morph: -
+        tt: layer_tap_toggle {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+            display-name = "Layer-Hold-Tap";
+        };
+    };
+};
