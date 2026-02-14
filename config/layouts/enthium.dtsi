@@ -30,4 +30,4 @@
     &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp P   &kp Z   &none \
     &kp B  &kp C   LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) &kp S   &kp W \
     &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp F   AS(V)   &none \
-                             &mo 1   &kp SPACE &kp ESC     &kp RET &kp R   &mo 2
+                       &mo L_NUMBERS &kp SPACE &kp ESC     &kp RET &kp R   &mo L_SYMBOLS

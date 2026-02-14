@@ -34,6 +34,10 @@
  * 󱏦   *unused*
  * 󱥭   *unused*
  */
+#define L_BASE     0
+#define L_ENTHIUM  L_BASE
+#define L_NUMBERS  1
+#define L_SYMBOLS  2
 
 
 / {
