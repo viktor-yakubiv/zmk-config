@@ -14,6 +14,28 @@
 
 #include "layouts/qwerty.dtsi"
 
+
+/**
+ * Layers
+ *
+ * The following icons from a Nerd Font
+ * are the symbolid representation of layers and actions on layers.
+ *
+ * 󰱞   Close current layer, return to base layer
+ *
+ * 󰪸   Typing layer
+ * 󰎢   Base layer
+ * 󰎥   Numbers
+ * 󰎨   Symbols
+ * 󰼄   Media
+ * 󱊇   System
+ *
+ * 󱅅   *unused*
+ * 󱏦   *unused*
+ * 󱥭   *unused*
+ */
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
