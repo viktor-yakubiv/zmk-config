@@ -15,7 +15,7 @@
 ├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
 │       ┃   Q   ┃   Y   ┃   O   ┃   U   ┃   =   ┃  ┃   X   ┃   L   ┃   D   ┃   P   ┃   Z   ┃   ⌫   │
 ├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
-│   B   ┃   C   ┃ I ┊ ⌥ ┃ A ┊ ⌃ ┃ E ┊ ⇧ ┃   -   ┃  ┃   K   ┃ H ┊ ⇧ ┃ T ┊ ⌃ ┃ N ┊ ⌥ ┃   S   ┃   W   │
+│   B   ┃ C ┊ ⌘ ┃ I ┊ ⌥ ┃ A ┊ ⌃ ┃ E ┊ ⇧ ┃   -   ┃  ┃   K   ┃ H ┊ ⇧ ┃ T ┊ ⌃ ┃ N ┊ ⌥ ┃ S ┊ ⌘ ┃   W   │
 ├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
 │       ┃   '   ┃   ,   ┃   .   ┃   ;   ┃   /   ┃  ┃   J   ┃   M   ┃   G   ┃   F   ┃   V   ┃   ⏎   │
 ╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
@@ -34,6 +34,6 @@
 
 #define ENTHIUM \
     &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp P   &kp Z   &none \
-    &kp B  &kp C   LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) &kp S   &kp W \
+    &kp B  LHM4(C) LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) RHM4(S) &kp W \
     &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp F   AS(V)   &none \
                              &kp TAB &kp SPACE VIMCMD      &tt L_SYMBOLS L_NUMBERS &kp R   &kp RET
