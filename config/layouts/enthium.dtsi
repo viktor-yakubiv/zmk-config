@@ -9,15 +9,19 @@
  *   https://sunaku.github.io/enthium-keyboard-layout.html
  *   https://layouts.wiki/layouts/2026/enthium/
  *
- * The layout below is my adaptation of the Enthium v14 to Corne 3×6
+ * The layout below is my adaptation of the Enthium v12 to Corne 3×6.
+ * I originally started with Enthium v14 but have found W on right pinky
+ * uncomfortable as for the Vim uses: I type 'change word' (`ciw`, `caw`)
+ * and 'delete word' (`diw`, `daw`) motions a lot. Therefore, I have switched
+ * to Enthium v12 that has 3-key difference with the v14.
  *
 ╭────────────────── Left-side ──────────────────╮  ╭───────────────── Right-side ──────────────────╮
 ├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
-│       ┃   Q   ┃   Y   ┃   O   ┃   U   ┃   =   ┃  ┃   X   ┃   L   ┃   D   ┃   P   ┃   Z   ┃   ⌫   │
+│       ┃   Q   ┃   Y   ┃   O   ┃   U   ┃   =   ┃  ┃   X   ┃   L   ┃   D   ┃   W   ┃   Z   ┃   ⌫   │
 ├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
-│   B   ┃ C ┊ ⌘ ┃ I ┊ ⌥ ┃ A ┊ ⌃ ┃ E ┊ ⇧ ┃   -   ┃  ┃   K   ┃ H ┊ ⇧ ┃ T ┊ ⌃ ┃ N ┊ ⌥ ┃ S ┊ ⌘ ┃   W   │
+│   B   ┃ C ┊ ⌘ ┃ I ┊ ⌥ ┃ A ┊ ⌃ ┃ E ┊ ⇧ ┃   -   ┃  ┃   K   ┃ H ┊ ⇧ ┃ T ┊ ⌃ ┃ N ┊ ⌥ ┃ S ┊ ⌘ ┃   F   │
 ├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
-│       ┃   '   ┃   ,   ┃   .   ┃   ;   ┃   /   ┃  ┃   J   ┃   M   ┃   G   ┃   F   ┃   V   ┃   ⏎   │
+│       ┃   '   ┃   ,   ┃   .   ┃   ;   ┃   /   ┃  ┃   J   ┃   M   ┃   G   ┃   P   ┃   V   ┃   ⏎   │
 ╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
                         ┌───────┬───────┬───────┐  ┌───────┬───────┬───────┐
                         │   ⇥   │   ␣   │ ⎋ ┊ ⌘ │  │ 󰎥 ┊ 󰎨 │   R   │   ⏎   │
@@ -33,7 +37,7 @@
 #define VIMCMD &mt LCMD ESC
 
 #define ENTHIUM \
-    &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp P   &kp Z   &none \
-    &kp B  LHM4(C) LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) RHM4(S) &kp W \
-    &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp F   AS(V)   &none \
+    &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp W   &kp Z   &none \
+    &kp B  LHM4(C) LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) RHM4(S) &kp F \
+    &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp P   AS(V)   &none \
                              &kp TAB &kp SPACE VIMCMD      &tt L_SYMBOLS L_NUMBERS &kp R   &kp RET
