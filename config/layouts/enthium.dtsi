@@ -37,7 +37,7 @@
 #define VIMCMD &mt LCMD ESC
 
 #define ENTHIUM \
-    &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp W   &kp Z   &none \
-    &kp B  LHM4(C) LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) RHM4(S) &kp F \
-    &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp P   AS(V)   &none \
+    &none  &kp Q   &kp Y     &kp O   &kp U     &kp EQUAL   &kp X   &kp L   &kp D   &kp W   &kp Z   &kp BSPC \
+    &kp B  LHM4(C) LHM3(I)   LHM2(A) LHM1(E)   &kp MINUS   &kp K   RHM1(H) RHM2(T) RHM3(N) RHM4(S) &kp F    \
+    &none  &kp SQT &kp COMMA &kp DOT &kp SEMI  &kp FSLH    &kp J   &kp M   &kp G   &kp P   AS(V)   &kp RET  \
                              &kp TAB &kp SPACE VIMCMD      &tt L_SYMBOLS L_NUMBERS &kp R   &kp RET
