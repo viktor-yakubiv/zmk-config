@@ -1,0 +1,35 @@
+/**
+ * The Kvant layout
+ *
+ * The layout was designed by Giorgi Chavchanidze.
+ *
+ * Find out more about the layout at
+ *   https://lykt.xyz/kvant/
+ *
+ * This is my adaptation to Corne, including some letter switches
+ * to align also with the underneeth Enthium layer.
+╭────────────────── Left-side ──────────────────╮  ╭───────────────── Right-side ──────────────────╮
+├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
+│   Ф   ┃   Ш   ┃   З   ┃   Е   ┃   У   ┃   Ю   ┃  ┃   Б   ┃   П   ┃   Р   ┃   М   ┃   Ж   ┃   -   │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│   Щ   ┃ Д ┊ ⌘ ┃ С ┊ ⌥ ┃ І ┊ ⌃ ┃ А ┊ ⇧ ┃   И   ┃  ┃   К   ┃ В ┊ ⇧ ┃ Н ┊ ⌃ ┃ Т ┊ ⌥ ┃ Л ┊ ⌘ ┃   Ц   │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│   '   ┃   ,   ┃   Ч   ┃   Ь   ┃   Я   ┃   Ї   ┃  ┃   Г   ┃   Й   ┃   Є   ┃   Х   ┃   .   ┃   Ґ   │
+╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
+                        ┌───────┬───────┬───────┐  ┌───────┬───────┬───────┐
+                        │   ⌫   │ ⎋ ┊ ⌘ │   ␣   │  │   ⏎   │   О   │ 󰎥 ┊ 󰎨 │
+                        ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+ */
+#pragma once
+
+// Shorter definition for Й
+#define UC_UK_J   UC_UK_I_SHORT
+#define UC_UK_YE  UC_UK_IE
+
+#define UC(SUFFIX) &uc UC_##SUFFIX
+
+#define KVANT \
+    UC(UK_F)    UC(UK_SH)   UC(UK_Z)    UC(UK_E)    UC(UK_U)    UC(UK_YU)   UC(UK_B)    UC(UK_P)    UC(UK_R)    UC(UK_M)    UC(UK_ZH)   &kp MINUS   \
+    UC(UK_SCH)  UC(UK_D)    UC(UK_S)    UC(UK_I)    UC(UK_A)    UC(UK_Y)    UC(UK_K)    UC(UK_V)    UC(UK_N)    UC(UK_T)    UC(UK_L)    UC(UK_TS)   \
+    &trans      &kp COMMA   UC(UK_CH)   UC(UK_SOFT) UC(UK_YA)   UC(UK_YI)   UC(UK_H)    UC(UK_J)    UC(UK_YE)   UC(UK_KH)   &kp DOT     UC(UK_G)    \
+                                        &trans      &trans      &trans      &trans      UC(UK_O)    &trans
