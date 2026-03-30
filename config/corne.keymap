@@ -14,6 +14,7 @@
 #include "behaviors/layer-switching.dtsi"
 
 #include "layouts/enthium.dtsi"
+#include "layouts/kvant.dtsi"
 #include "layouts/numbers.dtsi"
 #include "layouts/symbols.dtsi"
 
