@@ -1,0 +1,41 @@
+/**
+ * The Kvant layout
+ *
+ * The layout was designed by Giorgi Chavchanidze.
+ *
+ * Find out more about the layout at
+ *   https://lykt.xyz/kvant/
+ *
+ * This is my adaptation to Corne, including some letter switches
+ * to align also with the underneeth Enthium layer.
+╭────────────────── Left-side ──────────────────╮  ╭───────────────── Right-side ──────────────────╮
+├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
+│   Ф   ┃   Ш   ┃   З   ┃   Е   ┃   У   ┃   Ю   ┃  ┃   Б   ┃   П   ┃   Р   ┃   М   ┃   Ж   ┃   -   │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│   Щ   ┃ Д ┊ ⌘ ┃ С ┊ ⌥ ┃ І ┊ ⌃ ┃ А ┊ ⇧ ┃   И   ┃  ┃   К   ┃ В ┊ ⇧ ┃ Н ┊ ⌃ ┃ Т ┊ ⌥ ┃ Л ┊ ⌘ ┃   Ц   │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│   '   ┃   ,   ┃   Ч   ┃   Ь   ┃   Я   ┃   Ї   ┃  ┃   Г   ┃   Й   ┃   Є   ┃   Х   ┃   .   ┃   Ґ   │
+╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
+                        ┌───────┬───────┬───────┐  ┌───────┬───────┬───────┐
+                        │   ⌫   │ ⎋ ┊ ⌘ │   ␣   │  │   ⏎   │   О   │ 󰎥 ┊ 󰎨 │
+                        ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+ */
+
+#pragma once
+
+#include <behaviors/unicode.dtsi>
+#include <zmk-unicode/keys/ukrainian.h>
+
+&uc {
+    default-mode = <UC_MODE_MACOS>;
+}
+
+#define UK(LETTER_NAME) &uc UC_UK_##LETTER_NAME
+
+#define UC_UK_J UC_UK_I_SHORT
+
+#define KVANT \
+    UK(F)    UK(SH)      UK(Z)        UK(E)        UK(U)        UK(YU)    UK(B)  UK(P)        UK(R)        UK(M)        UK(ZH)       &key MINUS \
+    UK(SHC)  LHM4(UK(D)) LHM3(UK(S))  LHM2(UK(I))  LHM1(UK(A))  UK(Y)     UK(K)  RHM1(UK(V))  RHM2(UK(N))  RHM3(UK(T))  RHM4(UK(L))  UK(TS)     \
+    &trans   &kp COMMA   UK(CH)       UK(SOFT)     UK(YA)       UK(YI)    UK(H)  UK(J)        UK(YE)       UK(KH)       &kp DOT      UK(G)      \
+                                      &trans       &trans       &trans    &trans UK(O)        &trans
