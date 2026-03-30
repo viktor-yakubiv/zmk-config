@@ -28,7 +28,7 @@
 
 &uc {
     default-mode = <UC_MODE_MACOS>;
-}
+};
 
 #define UK(LETTER_NAME) &uc UC_UK_##LETTER_NAME
 
