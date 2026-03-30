@@ -39,8 +39,9 @@
  */
 #define L_BASE     0
 #define L_ENTHIUM  L_BASE
-#define L_NUMBERS  1
-#define L_SYMBOLS  2
+#define L_KVANT    1
+#define L_NUMBERS  2
+#define L_SYMBOLS  3
 
 
 / {
@@ -52,6 +53,12 @@
         enthium_layer {
             display-name = "Enthium";
             bindings = <ENTHIUM>;
+        };
+
+        // Kvant is an alternative layout for Ukrainian
+        kvant_layer {
+            display-name = "Kvant";
+            bindings = <KVANT>;
         };
 
         number_layer {
