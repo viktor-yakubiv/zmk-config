@@ -1,1 +1,11 @@
+# Caches
+.west/
 .zmk/
+
+# Build modules
+#
+# These are the the collection of cloned Git repositories
+# used only for builds.
+modules/
+zephyr/
+zmk/
