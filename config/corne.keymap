@@ -47,6 +47,7 @@
 
 &uc {
     default-mode = <UC_MODE_MACOS>;
+    minimum-length = <4>; // MacOS expects exactly 4-key long sequences
 };
 
 
