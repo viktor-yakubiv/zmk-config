@@ -26,10 +26,10 @@
 #define UC_UK_J   UC_UK_I_SHORT
 #define UC_UK_YE  UC_UK_IE
 
-#define UC(SUFFIX) &uc UC_##SUFFIX
+#define UK(LETTER_NAME) &uc UC_UK_##LETTER_NAME
 
 #define KVANT \
-    UC(UK_F)    UC(UK_SH)   UC(UK_Z)    UC(UK_E)    UC(UK_U)    UC(UK_YU)   UC(UK_B)    UC(UK_P)    UC(UK_R)    UC(UK_M)    UC(UK_ZH)   &kp MINUS   \
-    UC(UK_SCH)  UC(UK_D)    UC(UK_S)    UC(UK_I)    UC(UK_A)    UC(UK_Y)    UC(UK_K)    UC(UK_V)    UC(UK_N)    UC(UK_T)    UC(UK_L)    UC(UK_TS)   \
-    &trans      &kp COMMA   UC(UK_CH)   UC(UK_SOFT) UC(UK_YA)   UC(UK_YI)   UC(UK_H)    UC(UK_J)    UC(UK_YE)   UC(UK_KH)   &kp DOT     UC(UK_G)    \
-                                        &trans      &trans      &trans      &trans      UC(UK_O)    &trans
+    UK(F)     UK(SH)    UK(Z)     UK(E)     UK(U)     UK(YU)    UK(B)     UK(P)     UK(R)     UK(M)     UK(ZH)    &kp MINUS \
+    UK(SCH)   UK(D)     UK(S)     UK(I)     UK(A)     UK(Y)     UK(K)     UK(V)     UK(N)     UK(T)     UK(L)     UK(TS)    \
+    &trans    &kp COMMA UK(CH)    UK(SOFT)  UK(YA)    UK(YI)    UK(H)     UK(J)     UK(YE)    UK(KH)    &kp DOT   UK(G)     \
+                                  &trans    &trans    &trans    &trans    UK(O)     &trans
