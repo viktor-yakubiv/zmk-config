@@ -1,0 +1,25 @@
+#pragma once
+
+// A key that cycles Bluetooth connection on tap
+// or clears the current connection on hold
+
+/ {
+    behaviors {
+        // Shift-tap: BT_NXT → BT_PRV
+        bt_nxt_prv: bt_next_prev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        btc: bt_cycle_or_clear {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&bt>, <&bt_nxt_prv>;
+        };
+    };
+};
+
+#define BT_KEY &btc BT_CLR

@@ -12,6 +12,7 @@
 
 #include "keypos/corne.dtsi"
 #include "behaviors/autoshift.dtsi"
+#include "behaviors/bluetooth.dtsi"
 #include "behaviors/homerowmods.dtsi"
 #include "behaviors/layer-switching.dtsi"
 
