@@ -14,6 +14,7 @@
 // 2. Middle finger;
 // 3. Ring finger;
 // 4. Pinky;
+// 5. Thumb;
 //
 // Each define uses the following syntax:
 //
@@ -34,6 +35,11 @@
 #define RHRM3 RALT
 #define RHRM4 RGUI
 
+// Thumb cluster mods (left and right sides respectively)
+#define LTCM1 LCMD
+#define RTCM1 RCMD
+
+
 // Instead of using the homerow mod behaviors directly, we'll use the next
 // macro functions so we don't have to worry when to use the `hm` or `hs`
 // behavior:
@@ -50,6 +56,10 @@
 #define RHM3(_key)  &hmr RHRM3 _key
 #define RHM4(_key)  &hmr RHRM4 _key
 
+// Thumb cluster
+#define LHM5(_key)  &hml LTCM1 _key
+#define RHM5(_key)  &hmr RTCM1 _key
+
 // On the same style as the homerow mods, I want to define a normal momentary
 // hold behavior for the cases where I want to have a hold-preferred behavior:
 
@@ -64,6 +74,11 @@
 #define RMT2(_key)  &mt RHRM2 _key
 #define RMT3(_key)  &mt RHRM3 _key
 #define RMT4(_key)  &mt RHRM4 _key
+
+// Thumb cluster
+#define LMT5(_key)  &mt LTCM1 _key
+#define RMT5(_key)  &mt RTCM1 _key
+
 
 // This is a helper macro to allow me to define all home-row modifier without
 // having to type all the boilerplate configuration.
