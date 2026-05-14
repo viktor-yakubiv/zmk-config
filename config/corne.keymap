@@ -20,6 +20,7 @@
 #include "layouts/kvant.dtsi"
 #include "layouts/numbers.dtsi"
 #include "layouts/symbols.dtsi"
+#include "layouts/system.dtsi"
 
 
 /**
@@ -46,6 +47,7 @@
 #define L_KVANT    1
 #define L_NUMBERS  2
 #define L_SYMBOLS  3
+#define L_SYSTEM   4
 
 
 &uc {
@@ -79,6 +81,11 @@
         symbol_layer {
             display-name = "Symbols";
             bindings = <SYMBOLS>;
+        };
+
+        system_layer {
+            display-name = "System";
+            bindings = <SYSTEM>;
         };
     };
 };
