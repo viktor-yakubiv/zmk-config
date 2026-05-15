@@ -50,6 +50,10 @@
 #define L_SYSTEM   4
 
 
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
+
 &uc {
     default-mode = <UC_MODE_MACOS>;
     minimum-length = <4>; // MacOS expects exactly 4-key long sequences
@@ -86,6 +90,35 @@
         system_layer {
             display-name = "System";
             bindings = <SYSTEM>;
+        };
+    };
+};
+
+
+// Combo keys
+// -----------------------------------------------------------------------------
+// Unfortunately, there is just that much keys one can use on a small keyboard,
+// and not all the functionalities I want for my base layer fit on a 42-keys
+// keyboard. The solution for that is to use Combo keys, so I can make two keys
+// that make sense to be pressed together, to behave in a different way.
+//
+// Notice that Combo keys require the keys to be defined as numbers
+// representing their physical position in the keyboard. Because of that, each
+// keyboard mapping will have to define a macro for each combo on this layout.
+// The names of these macros should follow the following syntax:
+//
+// COMBO_KEY_<combo-name>
+#define COMBO_KEY_CAPS_WORD <LM1 RM1>
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // Turn on CAPS_WORD when pressing both shift keys together.
+        combo_caps_word {
+            timeout-ms = <75>;
+            key-positions = COMBO_KEY_CAPS_WORD;
+            layers = <L_ENTHIUM L_KVANT>;
+            bindings = <&caps_word>;
         };
     };
 };
