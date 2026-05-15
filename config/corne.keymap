@@ -18,8 +18,7 @@
 
 #include "layouts/enthium.dtsi"
 #include "layouts/kvant.dtsi"
-#include "layouts/numbers.dtsi"
-#include "layouts/symbols.dtsi"
+#include "layouts/numsym.dtsi"
 #include "layouts/system.dtsi"
 
 
@@ -46,8 +45,9 @@
 #define L_ENTHIUM  L_BASE
 #define L_KVANT    1
 #define L_NUMBERS  2
-#define L_SYMBOLS  3
-#define L_SYSTEM   4
+#define L_SYMBOLS  2
+#define L_NUMSYM   2
+#define L_SYSTEM   3
 
 
 &caps_word {
@@ -77,14 +77,9 @@
             bindings = <KVANT>;
         };
 
-        number_layer {
-            display-name = "Numbers";
-            bindings = <NUMBERS>;
-        };
-
-        symbol_layer {
-            display-name = "Symbols";
-            bindings = <SYMBOLS>;
+        numsym_layer {
+            display-name = "Numbers & Symbols";
+            bindings = <NUMSYM>;
         };
 
         system_layer {
@@ -119,6 +114,24 @@
             key-positions = COMBO_KEY_CAPS_WORD;
             layers = <L_ENTHIUM L_KVANT>;
             bindings = <&caps_word>;
+        };
+    };
+};
+
+// Layer switching
+// -----------------------------------------------------------------------------
+/ {
+    behaviors {
+        // Tap:        Sticky Number-Symbol Layer
+        // Shift-tap:  -
+        // Double-tap: Toggle Number-Symbol Layer
+        // Hold:       -
+        // Morph:      -
+        stgl_numsym: sticky_or_toggle_layer_numsym {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sl L_NUMSYM>, <&tog L_NUMSYM>;
         };
     };
 };

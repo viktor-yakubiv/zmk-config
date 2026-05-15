@@ -1,0 +1,23 @@
+/**
+ * Numbers & Symbols
+ *
+ * Inspired by Pascal Getreuer's blog post “Designing a Symbol Layer”:
+ * https://getreuer.info/posts/keyboards/symbol-layer/
+ *
+╭────────────────── Left-side ──────────────────╮  ╭───────────────── Right-side ──────────────────╮
+├───────┲━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┪  ┢━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┱───────┤
+│       ┃   9   ┃   8   ┃   7   ┃   6   ┃   5   ┃  ┃   ^   ┃   {   ┃   }   ┃   $   ┃       ┃       │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│       ┃   4   ┃   3   ┃   2   ┃   1   ┃   0   ┃  ┃   #   ┃   (   ┃   )   ┃   &   ┃       ┃       │
+├───────╊━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫  ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╉───────┤
+│       ┃   `   ┃   ~   ┃   .   ┃   !   ┃   |   ┃  ┃   @   ┃   [   ┃   ]   ┃   %   ┃       ┃       │
+╰───────┺━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┛  ┗━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┻━━━━━━━┹───────╯
+                        ┌───────┬───────┬───────┐  ┌───────┬───────┬───────┐
+                        │       │       │       │  │       │       │       │
+                        ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+*/
+#define NUMSYM \
+    &trans  &kp N9     &kp N8     &kp N7    &kp N6    &kp N5      &kp CARET  &kp LBRC  &kp RBRC  &kp DLLR   &none  &tog L_NUMSYM \
+    &none   &kp N4     &kp N3     &kp N2    &kp N1    &kp N0      &kp HASH   &kp LPAR  &kp RPAR  &kp SEMI   &none  &none  \
+    &trans  &kp GRAVE  &kp TILDE  &kp DOT   &kp EXCL  &kp PIPE    &kp AT     &kp LBKT  &kp RBKT  &kp PRCNT  &none  &trans \
+                                  &trans    &trans    &trans      &trans     &trans  &trans
