@@ -33,6 +33,9 @@ manifest:
       import: app/west.yml
 
     # ZMK modules
+    - name: zmk-helpers
+      remote: urob
+      path: modules/zmk/helpers
     - name: zmk-unicode
       remote: urob
       path: modules/zmk/unicode
