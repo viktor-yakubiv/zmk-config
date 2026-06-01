@@ -36,6 +36,7 @@ manifest:
     - name: zmk-helpers
       remote: urob
       path: modules/zmk/helpers
+      revision: bc114546392b4615ac90a99140eaf21dde31209d # main, 2026-05-21
     - name: zmk-unicode
       remote: urob
       path: modules/zmk/unicode
