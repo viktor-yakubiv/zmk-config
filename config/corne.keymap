@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi>
 #include <behaviors/unicode.dtsi>
 
 #include <dt-bindings/zmk/keys.h>
@@ -17,11 +18,6 @@
 #include "behaviors/bluetooth.dtsi"
 #include "behaviors/homerowmods.dtsi"
 #include "behaviors/layer-switching.dtsi"
-
-#include "layouts/enthium.dtsi"
-#include "layouts/kvant.dtsi"
-#include "layouts/numsym.dtsi"
-#include "layouts/system.dtsi"
 
 
 /**
@@ -51,6 +47,12 @@
 #define L_NUMSYM   2
 #define L_SYSTEM   3
 
+#include "keys.dtsi"
+#include "layouts/enthium.dtsi"
+#include "layouts/kvant.dtsi"
+#include "layouts/numbers.dtsi"
+#include "layouts/system.dtsi"
+
 
 &caps_word {
   continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
@@ -79,9 +81,9 @@
             bindings = <KVANT>;
         };
 
-        numsym_layer {
-            display-name = "Numbers & Symbols";
-            bindings = <NUMSYM>;
+        numbers_layer {
+            display-name = "Numbers";
+            bindings = <NUMBERS>;
         };
 
         system_layer {

@@ -33,6 +33,9 @@ manifest:
       import: app/west.yml
 
     # ZMK modules
+    - name: zmk-auto-layer
+      remote: urob
+      path: modules/zmk/auto-layer
     - name: zmk-helpers
       remote: urob
       path: modules/zmk/helpers
