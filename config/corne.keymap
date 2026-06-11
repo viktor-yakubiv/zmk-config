@@ -47,41 +47,8 @@
 #define L_NUMSYM   2
 #define L_SYSTEM   3
 
+// Keys require layer definitions
 #include "keys.dtsi"
-#include "layouts/enthium.dtsi"
-#include "layouts/kvant.dtsi"
-#include "layouts/numbers.dtsi"
-#include "layouts/system.dtsi"
-
-
-&caps_word {
-  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
-};
-
-&uc {
-    default-mode = <UC_MODE_MACOS>;
-    minimum-length = <4>; // MacOS expects exactly 4-key long sequences
-};
-
-
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-        // Enthium is an alternative layout layer
-        // optimised for more comfortable typing and Vim-usage
-        enthium_layer {
-            display-name = "Enthium";
-            bindings = <ENTHIUM>;
-        };
-
-        // Kvant is an alternative layout for Ukrainian
-        kvant_layer {
-            display-name = "Kvant";
-            bindings = <KVANT>;
-        };
-    };
-};
 
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
     ZMK_LAYER(name,                                          \
@@ -93,6 +60,77 @@
 
 #define ____ &trans
 #define NONE &none
+
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
+
+&uc {
+    default-mode = <UC_MODE_MACOS>;
+    minimum-length = <4>; // MacOS expects exactly 4-key long sequences
+};
+
+/**
+ * The Base Layer — Enthium
+ *
+ * The layout was designed by Suraj N. Kurapati (@sunaku)
+ * originally in 2024 and reviewed multiple times by 30 January 2026,
+ * when the latest Enthium v14 was published.
+ *
+ * Find out more about the layout at
+ *   https://sunaku.github.io/enthium-keyboard-layout.html
+ *   https://layouts.wiki/layouts/2026/enthium/
+ *
+ * The layout below is my adaptation of the Enthium v14 to Corne 3×6.
+ * I originally started with Enthium v14, then tried v12, and suddenly,
+ * found reasonable to stick with the latest version.
+ * I have been finding unlogical having W on right pinky for the Vim uses:
+ * the 'change word' (`ciw`, `caw`) and 'delete word' (`diw`, `daw`) motions
+ * are very common and I use them a lot.
+ */
+#define C_NUM HYPER_NUM
+ZMK_BASE_LAYER(Enthium,
+//╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
+     NONE    &kp Q    &kp Y    &kp O    &kp U  &kp EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+    &kp B    &kp C   LHM3(I)  LHM2(A)  LHM1(E) &kp MINUS,    &kp K   RHM1(H)  RHM2(T)  RHM3(N)   &kp S    &kp W  ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+     NONE    &kp SQT &kp COMMA &kp DOT &kp SEMI &kp FSLH,    &kp J    &kp M    &kp G    &kp F    &kp V     NONE  ,
+//╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
+                              &kp ESC  &kp SPACE C_NUM  ,   RHM5(RET) &kp R   &kp BSPC
+//                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
+)
+
+/**
+ * The Kvant layout
+ *
+ * The layout was designed by Giorgi Chavchanidze.
+ *
+ * Find out more about the layout at
+ *   https://lykt.xyz/kvant/
+ *
+ * This is my adaptation to Corne, including some letter switches
+ * to align also with the underneeth Enthium layer.
+ */
+
+// Shorter definition for Й
+#define UC_UK_J   UC_UK_I_SHORT
+#define UC_UK_YE  UC_UK_IE
+
+#define UK(LETTER_NAME) &uc UC_UK_##LETTER_NAME
+
+ZMK_BASE_LAYER(Kvant,
+//╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
+    UK(F)    UK(SH)   UK(Z)    UK(E)    UK(U)    UK(YU) ,    UK(B)     UK(P)   UK(R)    UK(M)    UK(ZH) &kp MINUS,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+    UK(SCH)  UK(D)    UK(S)    UK(I)    UK(A)    UK(Y)  ,    UK(K)     UK(V)   UK(N)    UK(T)    UK(L)    UK(TS) ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+     ____  &kp COMMA  UK(CH)  UK(SOFT)  UK(YA)   UK(YI) ,    UK(H)     UK(J)   UK(YE)   UK(KH)   &kp DOT   UK(G) ,   \
+//╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
+                                ____     ____     ____  ,     ____    UK(O)     ____
+//                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
+)
 
 ZMK_BASE_LAYER(Numbers,
 //╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
@@ -106,16 +144,18 @@ ZMK_BASE_LAYER(Numbers,
 //                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
 )
 
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-        system_layer {
-            display-name = "System";
-            bindings = <SYSTEM>;
-        };
-    };
-};
+#define BTK(_N) &bt BT_SEL _N
+ZMK_BASE_LAYER(System,
+//╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
+     ____    BTK(0)   BTK(1)   BTK(2)   BTK(3)   BTK(4) ,     NONE     NONE     NONE     NONE     NONE     ____  ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+  &bt BT_CLR  NONE     NONE     NONE     NONE     NONE  ,     NONE     NONE     NONE     NONE     NONE     NONE  ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+     ____     NONE     NONE     NONE     NONE     NONE  ,     NONE     NONE     NONE     NONE     NONE     ____  ,
+//╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
+                                ____     ____     ____  ,     ____     ____     ____
+//                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
+)
 
 
 // Combo keys
