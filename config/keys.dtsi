@@ -23,3 +23,19 @@ ZMK_TAP_DANCE(num_dance,
     bindings = <&sl L_NUMBERS>, <&num_word L_NUMBERS>;
     tapping-term-ms = <200>;
 )
+
+
+// Hack: Make HRM combos tap-only (cf, ZMK issue #544).
+#define HOMEROW_COMBO(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)   \
+    ZMK_HOMEROW_MOD(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                    \
+    ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
+
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
+    ZMK_MOD_MORPH(NAME,                                                        \
+        mods = <(MOD_L##MOD | MOD_R##MOD)>;                                    \
+        bindings = <BINDING1>, <BINDING2>;                                     \
+    )
+
+// Tap: left/right parenthesis | Shift + tap: less-than/greater-than.
+SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
+SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
