@@ -1,4 +1,5 @@
 # Caches
+.build/
 .west/
 .zmk/
 
@@ -9,3 +10,6 @@
 modules/
 zephyr/
 zmk/
+
+# Build outputs
+firmware/
