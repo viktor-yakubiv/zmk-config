@@ -12,19 +12,6 @@
         __VA_ARGS__                                         \
     )
 
-// Tap:        sticky number layer
-// Shift-tap:  -
-// Double-tap: num word
-// Hold:       command key
-// Morph:      -
-#define HYPER_NUM &hml_num LCMD 0
-ZMK_HOMEROW_MOD(hml_num, &kp, &num_dance, KEYS_R THUMBS)
-ZMK_TAP_DANCE(num_dance,
-    bindings = <&sl L_NUMBERS>, <&num_word L_NUMBERS>;
-    tapping-term-ms = <200>;
-)
-
-
 // Hack: Make HRM combos tap-only (cf, ZMK issue #544).
 #define HOMEROW_COMBO(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)   \
     ZMK_HOMEROW_MOD(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                    \
@@ -35,6 +22,70 @@ ZMK_TAP_DANCE(num_dance,
         mods = <(MOD_L##MOD | MOD_R##MOD)>;                                    \
         bindings = <BINDING1>, <BINDING2>;                                     \
     )
+
+
+// Tap:        space
+// Shift-tap:  dot -> space -> sticky shift
+// Double-tap: -
+// Hold:       command key
+// Morph:      -
+#define C_SPC &hml_spc LCMD 0
+ZMK_HOMEROW_MOD(hml_spc, &kp, &spc_morph, KEYS_L KEYS_R THUMBS)
+ZMK_HOLD_TAP(lt_spc,
+    bindings = <&mo>, <&spc_morph>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+)
+SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
+ZMK_MACRO(dot_spc,
+    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+    wait-ms = <0>;
+    tap-ms = <5>;
+)
+
+// Tap:        sticky number layer
+// Shift-tap:  -
+// Double-tap: num word
+// Hold:       command key
+// Morph:      -
+#define HYPER_NUM &hml_num LCMD 0
+ZMK_HOMEROW_MOD(hml_num, &kp, &num_dance, KEYS_R THUMBS)
+ZMK_TAP_DANCE(num_dance,
+    bindings = <&num_word L_NUMBERS>, <&sl L_NUMBERS>;
+    tapping-term-ms = <200>;
+)
+
+// Tap:        sticky number layer
+// Shift-tap:  -
+// Double-tap: num word
+// Hold:       number layer
+// Morph:      -
+#define SMART_NUM &smart_num L_NUMBERS 0
+ZMK_HOLD_TAP(smart_num,
+    bindings = <&mo>, <&num_dance>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+)
+
+// Tap:        nav word
+// Shift-tap:  -
+// Double-tap: -
+// Hold:       nav layer
+// Morph:      -
+#define C_NAV &mt_nav L_NAV L_NAV
+ZMK_HOLD_TAP(mt_nav,
+    bindings = <&mo>, <&nav_word>;
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+)
+ZMK_AUTO_LAYER(nav_word,
+    continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP>;
+    ignore-modifiers;
+)
+
 
 // Tap: left/right parenthesis | Shift + tap: less-than/greater-than.
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)

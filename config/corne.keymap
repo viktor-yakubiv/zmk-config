@@ -92,7 +92,7 @@
  * the 'change word' (`ciw`, `caw`) and 'delete word' (`diw`, `daw`) motions
  * are very common and I use them a lot.
  */
-#define C_NUM HYPER_NUM
+#define C_NUM SMART_NUM
 ZMK_BASE_LAYER(Enthium,
 //╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
      NONE    &kp Q    &kp Y    &kp O    &kp U  &kp EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
@@ -101,7 +101,7 @@ ZMK_BASE_LAYER(Enthium,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
      NONE    &kp SQT &kp COMMA &kp DOT &kp SEMI &kp FSLH,    &kp J    &kp M    &kp G    &kp F    &kp V     NONE  ,
 //╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
-                              &kp ESC  &kp SPACE C_NUM  ,   RHM5(RET) &kp R   &kp BSPC
+                              &kp ESC   C_SPC    C_NAV  ,    C_NUM    RHM5(R) &kp BSPC
 //                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
 )
 
