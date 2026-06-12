@@ -161,11 +161,12 @@ ZMK_BASE_LAYER(Numbers,
 )
 
 #define BTK(_N) &bt BT_SEL _N
+#define STUDIO  &studio_unlock
 ZMK_BASE_LAYER(System,
 //╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
      ____    BTK(0)   BTK(1)   BTK(2)   BTK(3)   BTK(4) ,     NONE     NONE     NONE     NONE     NONE     ____  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
-  &bt BT_CLR  NONE     NONE     NONE     NONE     NONE  ,     NONE     NONE     NONE     NONE     NONE     NONE  ,
+  &bt BT_CLR  NONE     NONE     NONE     NONE    STUDIO ,     NONE     NONE     NONE     NONE     NONE     NONE  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
      ____     NONE     NONE     NONE     NONE     NONE  ,     NONE     NONE     NONE     NONE     NONE     ____  ,
 //╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
