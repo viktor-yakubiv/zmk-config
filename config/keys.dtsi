@@ -39,3 +39,36 @@ ZMK_TAP_DANCE(num_dance,
 // Tap: left/right parenthesis | Shift + tap: less-than/greater-than.
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
+
+
+/**
+ * Navigation keys
+ */
+
+// Trigger tap-action on all interrupts.
+#define MT_CORE                                                                \
+  flavor = "tap-preferred";                                                    \
+  tapping-term-ms = <220>;                                                     \
+  quick-tap-ms = <220>;                                                        \
+  hold-trigger-key-positions = <0>;
+
+ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
+ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
+
+#define C_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
+#define C_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
+#define C_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
+#define C_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
+#define C_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define C_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+
+// Mask CTRL on left/right hold to avoid accidental jumps to start/end of doc.
+#define MASK_MODS(NAME, MODS, BINDING)                                         \
+  ZMK_MOD_MORPH(NAME, bindings = <BINDING>, <BINDING>; mods = <MODS>;)
+
+MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
+MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
+
+#define QUIT   &kp LG(Q)
+#define CLOSE  &kp LG(W)
+#define CANCEL &kp K_CANCEL

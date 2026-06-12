@@ -42,10 +42,11 @@
 #define L_BASE     0
 #define L_ENTHIUM  L_BASE
 #define L_KVANT    1
-#define L_NUMBERS  2
-#define L_SYMBOLS  2
-#define L_NUMSYM   2
-#define L_SYSTEM   3
+#define L_NAV      2
+#define L_NUMBERS  3
+#define L_SYMBOLS  3
+#define L_NUMSYM   3
+#define L_SYSTEM   4
 
 // Keys require layer definitions
 #include "keys.dtsi"
@@ -70,6 +71,8 @@
     default-mode = <UC_MODE_MACOS>;
     minimum-length = <4>; // MacOS expects exactly 4-key long sequences
 };
+
+&mt { MT_CORE };
 
 /**
  * The Base Layer — Enthium
@@ -129,6 +132,19 @@ ZMK_BASE_LAYER(Kvant,
      ____  &kp COMMA  UK(CH)  UK(SOFT)  UK(YA)   UK(YI) ,    UK(H)     UK(J)   UK(YE)   UK(KH)   &kp DOT   UK(G) ,   \
 //╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
                                 ____     ____     ____  ,     ____    UK(O)     ____
+//                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
+)
+
+#define SKM(_N) &sk LHRM ## _N
+ZMK_BASE_LAYER(Navigation,
+//╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
+     ____     QUIT    CLOSE     ____     ____     ____  ,  &kp PG_UP   ____     C_UP     ____     ____     ____  ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+     ____     ____    SKM(3)   SKM(2)   SKM(1)    ____  ,  &kp PG_DN  C_LEFT   C_DOWN   C_RIGHT &kp RET    ____  ,
+//├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
+     ____     ____     ____     ____     ____     ____  ,     ____     ____     ____     ____     ____     ____  ,
+//╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
+                               CANCEL    ____     ____  ,     ____     ____     ____
 //                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
 )
 
