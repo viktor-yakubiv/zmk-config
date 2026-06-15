@@ -14,7 +14,6 @@
 #include <zmk-helpers/key-labels/42.h>
 #include <zmk-helpers/helper.h>
 
-#include "behaviors/autoshift.dtsi"
 #include "behaviors/bluetooth.dtsi"
 #include "behaviors/homerowmods.dtsi"
 #include "behaviors/layer-switching.dtsi"
@@ -96,11 +95,11 @@
 #define C_SYS &mo L_SYSTEM
 ZMK_BASE_LAYER(Enthium,
 //╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
-    C_SYS    &kp Q    &kp Y    &kp O    &kp U  &kp EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
+    C_SYS    &kp Q    &kp Y    &kp O    &kp U    C_EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
-    &kp B    &kp C   LHM3(I)  LHM2(A)  LHM1(E) &kp MINUS,    &kp K   RHM1(H)  RHM2(T)  RHM3(N)   &kp S    &kp W  ,
+    &kp B    &kp C   LHM3(I)  LHM2(A)  LHM1(E)   C_MINUS,    &kp K   RHM1(H)  RHM2(T)  RHM3(N)   &kp S    &kp W  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
-     NONE    &kp SQT &kp COMMA &kp DOT &kp SEMI &kp FSLH,    &kp J    &kp M    &kp G    &kp F    &kp V     NONE  ,
+     NONE    C_SQT   C_COMMA   C_DOT    C_SEMI   C_FSLH ,    &kp J    &kp M    &kp G    &kp F    &kp V     NONE  ,
 //╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
                               &kp ESC   C_SPC    C_NAV  ,    C_NUM    RHM5(R) &kp BSPC
 //                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //

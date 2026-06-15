@@ -98,10 +98,10 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // Trigger tap-action on all interrupts.
 #define MT_CORE                                                                \
-  flavor = "tap-preferred";                                                    \
-  tapping-term-ms = <220>;                                                     \
-  quick-tap-ms = <220>;                                                        \
-  hold-trigger-key-positions = <0>;
+    flavor = "tap-preferred";                                                  \
+    tapping-term-ms = <220>;                                                   \
+    quick-tap-ms = <220>;                                                      \
+    hold-trigger-key-positions = <0>;
 
 ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
 ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
@@ -123,3 +123,39 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 #define QUIT   &kp LG(Q)
 #define CLOSE  &kp LG(W)
 #define CANCEL &kp K_CANCEL
+
+
+
+/**
+ * Symbols
+ */
+
+#define AUTOSHIFT(NAME, BINDING1, BINDING2)                                                   \
+    ZMK_HOLD_TAP(NAME, bindings = <BINDING1>, <BINDING2>; MT_CORE)
+
+#define AUTOSHIFT_MORPH(NAME, SFT_KEYCODE, KEYCODE)                            \
+    SIMPLE_MORPH(NAME ## _morph, SFT, &kp KEYCODE, &kp SFT_KEYCODE)            \
+    AUTOSHIFT(NAME, &kp, & ## NAME ## _morph)
+
+// Generic autoshift behaviour
+AUTOSHIFT(as, &kp, &kp)
+#define AS(KEYCODE) &as LS(KEYCODE) KEYCODE
+
+#define C_SEMI   AS(SEMI)
+#define C_EQUAL  AS(EQUAL)
+#define C_MINUS  AS(MINUS)
+
+AUTOSHIFT_MORPH  (comma_dot,  COMMA, DOT)
+AUTOSHIFT_MORPH  (qmark_dot,  QMARK, DOT)
+#define C_DOT    &qmark_dot   QMARK  DOT
+
+AUTOSHIFT_MORPH  (excl_comma, EXCL,  COMMA)
+#define C_COMMA  &excl_comma  EXCL   COMMA
+
+// Tap: forward slach, Shift-tap: back slash, Hold: pipe
+AUTOSHIFT_MORPH (fslh_bslh,   PIPE,  FSLH)
+#define C_FSLH  &fslh_bslh    BSLH   FSLH
+
+// Tap: forward slach, Shift-tap: back slash, Hold: pipe
+AUTOSHIFT_MORPH (sqt_grave,  GRAVE,  SQT)
+#define C_SQT   &sqt_grave   DQT     SQT
