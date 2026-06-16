@@ -93,9 +93,10 @@
  * are very common and I use them a lot.
  */
 #define C_NUM SMART_NUM
+#define C_SYS &mo L_SYSTEM
 ZMK_BASE_LAYER(Enthium,
 //╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
-     NONE    &kp Q    &kp Y    &kp O    &kp U  &kp EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
+    C_SYS    &kp Q    &kp Y    &kp O    &kp U  &kp EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
     &kp B    &kp C   LHM3(I)  LHM2(A)  LHM1(E) &kp MINUS,    &kp K   RHM1(H)  RHM2(T)  RHM3(N)   &kp S    &kp W  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
