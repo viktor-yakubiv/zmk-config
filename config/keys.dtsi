@@ -74,9 +74,9 @@ ZMK_HOLD_TAP(smart_num,
 // Double-tap: -
 // Hold:       nav layer
 // Morph:      -
-#define C_NAV &mt_nav L_NAV L_NAV
+#define C_NAV &mt_nav L_NAV RET
 ZMK_HOLD_TAP(mt_nav,
-    bindings = <&mo>, <&nav_word>;
+    bindings = <&mo>, <&kp>;
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
