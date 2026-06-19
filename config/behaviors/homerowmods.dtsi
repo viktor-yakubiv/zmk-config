@@ -24,14 +24,14 @@
 // on the right side of the keyboard, that you press with your ring finger.
 
 // Left side
-#define LHRM1 LSHFT
-#define LHRM2 LCTRL
+#define LHRM1 LCTRL
+#define LHRM2 LSHFT
 #define LHRM3 LALT
 #define LHRM4 LGUI
 
 // Right side
-#define RHRM1 RSHFT
-#define RHRM2 RCTRL
+#define RHRM1 RCTRL
+#define RHRM2 RSHFT
 #define RHRM3 RALT
 #define RHRM4 RGUI
 
