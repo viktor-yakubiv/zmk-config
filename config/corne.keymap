@@ -189,7 +189,7 @@ ZMK_BASE_LAYER(System,
 // The names of these macros should follow the following syntax:
 //
 // COMBO_KEY_<combo-name>
-#define COMBO_KEY_CAPS_WORD <LM1 RM1>
+#define COMBO_KEY_CAPS_WORD <LM2 RM2>
 / {
     combos {
         compatible = "zmk,combos";
