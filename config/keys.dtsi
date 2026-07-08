@@ -153,9 +153,8 @@ AUTOSHIFT_MORPH  (excl_comma, EXCL,  COMMA)
 #define C_COMMA  &excl_comma  EXCL   COMMA
 
 // Tap: forward slach, Shift-tap: back slash, Hold: pipe
-AUTOSHIFT_MORPH (fslh_bslh,   PIPE,  FSLH)
-#define C_FSLH  &fslh_bslh    BSLH   FSLH
+AUTOSHIFT_MORPH (fslh_bslh,   BSLH,  FSLH)
+#define C_FSLH  &fslh_bslh    PIPE   FSLH
 
-// Tap: forward slach, Shift-tap: back slash, Hold: pipe
-AUTOSHIFT_MORPH (sqt_grave,  GRAVE,  SQT)
-#define C_SQT   &sqt_grave   DQT     SQT
+// Tap: single quote, Shift-tap: double quote, Hold: grave
+#define C_SQT   &as          GRAVE   SQT
