@@ -113,6 +113,9 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 #define C_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
 #define C_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
+#define C_DTPRV &kp LC(LEFT)  // Left (previous) desktop on MacOS
+#define C_DTNXT &kp LC(RIGHT) // Right (next) desktop on MacOS
+
 // Mask CTRL on left/right hold to avoid accidental jumps to start/end of doc.
 #define MASK_MODS(NAME, MODS, BINDING)                                         \
   ZMK_MOD_MORPH(NAME, bindings = <BINDING>, <BINDING>; mods = <MODS>;)
