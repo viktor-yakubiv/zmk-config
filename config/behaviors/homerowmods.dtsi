@@ -36,8 +36,8 @@
 #define RHRM4 RGUI
 
 // Thumb cluster mods (left and right sides respectively)
-#define LTCM1 LCMD
-#define RTCM1 RCMD
+#define LHRM5 LCMD
+#define RHRM5 RCMD
 
 
 // Instead of using the homerow mod behaviors directly, we'll use the next
@@ -57,8 +57,8 @@
 #define RHM4(_key)  &hmr RHRM4 _key
 
 // Thumb cluster
-#define LHM5(_key)  &hml LTCM1 _key
-#define RHM5(_key)  &hmr RTCM1 _key
+#define LHM5(_key)  &hml LHRM1 _key
+#define RHM5(_key)  &hmr RHRM1 _key
 
 // On the same style as the homerow mods, I want to define a normal momentary
 // hold behavior for the cases where I want to have a hold-preferred behavior:
