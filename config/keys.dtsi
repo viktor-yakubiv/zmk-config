@@ -68,13 +68,14 @@ ZMK_HOLD_TAP(smart_num,
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
 )
+#define C_NUM SMART_NUM
 
-// Tap:        nav word
+// Tap:        escape
 // Shift-tap:  -
 // Double-tap: -
 // Hold:       nav layer
 // Morph:      -
-#define C_NAV &mt_nav L_NAV RET
+#define C_NAV &mt_nav L_NAV ESC
 ZMK_HOLD_TAP(mt_nav,
     bindings = <&mo>, <&kp>;
     flavor = "balanced";
@@ -161,3 +162,8 @@ AUTOSHIFT_MORPH (fslh_bslh,   BSLH,  FSLH)
 
 // Tap: single quote, Shift-tap: double quote, Hold: grave
 #define C_SQT   &as          GRAVE   SQT
+
+#define C_RET   &kp          RET
+#define C_TAB   &kp          TAB
+
+#define C_SYS   &mo L_SYSTEM

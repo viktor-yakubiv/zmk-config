@@ -91,17 +91,15 @@
  * the 'change word' (`ciw`, `caw`) and 'delete word' (`diw`, `daw`) motions
  * are very common and I use them a lot.
  */
-#define C_NUM SMART_NUM
-#define C_SYS &mo L_SYSTEM
 ZMK_BASE_LAYER(Enthium,
 //╭────────┲━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓  ┏━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┱────────╮ //
-    C_SYS    &kp Q    &kp Y    &kp O    &kp U    C_EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z     NONE  ,
+    C_NAV    &kp Q    &kp Y    &kp O    &kp U    C_EQUAL,    &kp X    &kp L    &kp D    &kp P    &kp Z    C_NUM  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
     &kp B    &kp C   LHM3(I)  LHM2(A)  LHM1(E)   C_MINUS,    &kp K   RHM1(H)  RHM2(T)  RHM3(N)   &kp S    &kp W  ,
 //├────────╊━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫  ┣━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╋━━━━━━━━╉────────┤ //
      NONE    C_SQT   C_COMMA   C_DOT    C_SEMI   C_FSLH ,    &kp J    &kp M    &kp G    &kp F    &kp V     NONE  ,
 //╰────────┺━━━━━━━━┻━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩  ┡━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━┻━━━━━━━━┹────────╯ //
-                              &kp ESC   C_SPC    C_NAV  ,    C_NUM    RHM5(R) &kp BSPC
+                              &kp ESC   C_SPC    C_TAB  ,    C_RET    RHM5(R) &kp BSPC
 //                           ╰────────┴────────┴────────╯  ╰────────┴────────┴────────╯                            //
 )
 
@@ -218,15 +216,15 @@ ZMK_BASE_LAYER(System,
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-// (Curly) braces
-ZMK_COMBO(lbrc, &kp LBRC, RT1 RT2, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(rbrc, &kp RBRC, RT2 RT3, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// Backspace and delete
+ZMK_COMBO(lbrc, C_BSPC, RT1 RT2, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbrc, C_DEL, RT2 RT3, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-// (Round) parentheses
+// Parentheses and angle brackets
 HOMEROW_COMBO(lpar, &lpar_lt, RM1 RM2, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST, RC(RSHFT), KEYS_L)
 HOMEROW_COMBO(rpar, &rpar_gt, RM2 RM3, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST, RC(RALT),  KEYS_L)
 
-// (Square) brackets
+// Brackets and braces
 ZMK_COMBO(lbkt, &kp LBKT, RB1 RB2, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(rbkt, &kp RBKT, RB2 RB3, L_BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
